@@ -1,19 +1,40 @@
 package com.yunseong.algorithm.tree
 
+import com.yunseong.algorithm.queue.Queue
+
 class Tree<T>(
     var rootNode: Node<T>? = null,
     var search: Search? = null
 ) {
 
-    fun setLeftNode(node: Node<T>, leftNode: Node<T>) {
-        node[Direction.LEFT] = leftNode
-    }
-
-    fun setRightNode(node: Node<T>, rightNode: Node<T>) {
-        node[Direction.RIGHT] = rightNode
-    }
-
     fun search() {
         this.search?.search(this)
+    }
+
+    fun addNode(node: Node<T>) {
+        if (this.rootNode == null) {
+            this.rootNode = node
+            return
+        }
+
+        val queue: Queue<Node<T>> = Queue(this.rootNode!!)
+
+        while (queue.hasValue()) {
+            val currentNode = queue.dequeue().getOrThrow()
+
+            if (currentNode.left == null) {
+                currentNode.left = node
+                return
+            }
+
+            if (currentNode.right == null) {
+                currentNode.right = node
+                return
+            }
+
+            currentNode.getChildren().forEach {
+                queue.enqueue(it)
+            }
+        }
     }
 }

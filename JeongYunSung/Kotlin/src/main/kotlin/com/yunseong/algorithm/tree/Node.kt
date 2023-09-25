@@ -6,13 +6,6 @@ data class Node<T>(
     var right: Node<T>? = null
 ) {
 
-    operator fun set(direction: Direction, value: Node<T>) {
-        when (direction) {
-            Direction.LEFT -> left = value
-            Direction.RIGHT -> right = value
-        }
-    }
-
     fun getChildren(): List<Node<T>> {
         return listOfNotNull(left, right)
     }
