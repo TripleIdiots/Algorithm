@@ -1,9 +1,9 @@
 package com.yunseong.algorithm.algorithm.bfs
 
 import com.yunseong.algorithm.Search
+import com.yunseong.algorithm.Tree
 import com.yunseong.algorithm.graph.Graph
 import com.yunseong.algorithm.queue.Queue
-import com.yunseong.algorithm.Tree
 
 class BreadthFirstSearch : Search {
 

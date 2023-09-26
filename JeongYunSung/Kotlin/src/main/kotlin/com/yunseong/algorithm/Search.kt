@@ -1,7 +1,6 @@
 package com.yunseong.algorithm
 
 import com.yunseong.algorithm.graph.Graph
-import com.yunseong.algorithm.Tree
 
 interface Search {
 

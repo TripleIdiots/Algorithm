@@ -1,7 +1,5 @@
 package com.yunseong.algorithm
 
-import com.yunseong.algorithm.Element
-import com.yunseong.algorithm.Search
 import com.yunseong.algorithm.queue.Queue
 
 class Tree<T>(

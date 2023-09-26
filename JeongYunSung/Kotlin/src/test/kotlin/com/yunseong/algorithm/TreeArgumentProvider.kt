@@ -1,4 +1,4 @@
-package com.yunseong.algorithm.tree
+package com.yunseong.algorithm
 
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.params.provider.Arguments

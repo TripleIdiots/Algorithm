@@ -1,9 +1,9 @@
 package com.yunseong.algorithm.algorithm.dfs
 
 import com.yunseong.algorithm.Search
+import com.yunseong.algorithm.Tree
 import com.yunseong.algorithm.graph.Graph
 import com.yunseong.algorithm.graph.Vertex
-import com.yunseong.algorithm.Tree
 
 class DeepFirstSearch : Search {
 
