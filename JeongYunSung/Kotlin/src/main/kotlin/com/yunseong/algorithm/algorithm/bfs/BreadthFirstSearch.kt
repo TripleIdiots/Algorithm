@@ -3,7 +3,7 @@ package com.yunseong.algorithm.algorithm.bfs
 import com.yunseong.algorithm.Search
 import com.yunseong.algorithm.graph.Graph
 import com.yunseong.algorithm.queue.Queue
-import com.yunseong.algorithm.tree.Tree
+import com.yunseong.algorithm.Tree
 
 class BreadthFirstSearch : Search {
 
@@ -32,6 +32,5 @@ class BreadthFirstSearch : Search {
     }
 
     override fun <T> search(graph: Graph<T>) {
-        TODO("Not yet implemented")
     }
 }

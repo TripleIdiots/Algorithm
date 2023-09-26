@@ -1,4 +1,4 @@
-package com.yunseong.algorithm.tree
+package com.yunseong.algorithm
 
 data class Node<T>(
     val data: T,

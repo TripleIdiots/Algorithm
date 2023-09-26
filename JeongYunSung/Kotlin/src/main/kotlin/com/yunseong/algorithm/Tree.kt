@@ -1,4 +1,4 @@
-package com.yunseong.algorithm.tree
+package com.yunseong.algorithm
 
 import com.yunseong.algorithm.Element
 import com.yunseong.algorithm.Search

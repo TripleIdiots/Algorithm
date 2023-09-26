@@ -1,18 +1,37 @@
 package com.yunseong.algorithm.graph
 
-class Graph<T> {
+import com.yunseong.algorithm.Element
+import com.yunseong.algorithm.Search
+import java.util.LinkedList
 
-    private val adjacencyMap = mutableMapOf<Vertex<T>, ArrayList<Edge<T>>>()
+class Graph<T> : Element {
+
+    private val adjacencyMap = hashMapOf<Vertex<T>, LinkedList<Edge<T>>>()
 
     fun createVertex(data: T): Vertex<T> {
-        val vertex = Vertex(adjacencyMap.count(), data)
-        adjacencyMap[vertex] = arrayListOf()
+        val vertex = Vertex<T>(adjacencyMap.count())
+        vertex.data = data
+        adjacencyMap[vertex] = LinkedList()
         return vertex
     }
 
     fun addDirectedEdge(source: Vertex<T>, destination: Vertex<T>) {
         val edge = Edge(source, destination)
         adjacencyMap[source]?.add(edge)
+    }
+
+    fun from(index: Int): Vertex<T> {
+        return adjacencyMap.keys.firstOrNull {
+            it.index == index
+        } ?: throw NoSuchElementException()
+    }
+
+    operator fun get(vertex: Vertex<T>): LinkedList<Edge<T>>? {
+        return adjacencyMap[vertex]
+    }
+
+    override fun search(search: Search) {
+        search.search(this)
     }
 
     override fun toString(): String {
