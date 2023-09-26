@@ -1,4 +1,4 @@
-package com.yunseong.algorithm.tree
+package com.yunseong.algorithm
 
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ArgumentsSource

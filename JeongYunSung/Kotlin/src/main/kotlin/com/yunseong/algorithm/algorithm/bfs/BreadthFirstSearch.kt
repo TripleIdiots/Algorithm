@@ -1,8 +1,9 @@
-package com.yunseong.algorithm.tree.bfs
+package com.yunseong.algorithm.algorithm.bfs
 
+import com.yunseong.algorithm.Search
+import com.yunseong.algorithm.Tree
+import com.yunseong.algorithm.graph.Graph
 import com.yunseong.algorithm.queue.Queue
-import com.yunseong.algorithm.tree.Search
-import com.yunseong.algorithm.tree.Tree
 
 class BreadthFirstSearch : Search {
 
@@ -28,5 +29,8 @@ class BreadthFirstSearch : Search {
         }
 
         println(text)
+    }
+
+    override fun <T> search(graph: Graph<T>) {
     }
 }

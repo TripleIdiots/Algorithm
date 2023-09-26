@@ -1,13 +1,14 @@
 package com.yunseong.algorithm.back1010
 
+import com.yunseong.algorithm.Problem
 import java.math.BigInteger
 import java.util.Scanner
 
-class Back1010 {
+class Back1010 : Problem {
 
     val map: HashMap<Int, BigInteger> = HashMap()
 
-    fun solve() {
+    override fun solve() {
         val scanner = Scanner(System.`in`)
 
         val round = scanner.nextLine().toInt()
@@ -36,12 +37,10 @@ class Back1010 {
                 val value = BigInteger.valueOf(n.toLong()).multiply(factorial(n - 1))
                 map[n] = value
                 value
-            } else map[n]!!
+            } else {
+                map[n]!!
+            }
 
         return value
     }
-}
-
-fun main(args: Array<String>) {
-    Back1010().solve()
 }

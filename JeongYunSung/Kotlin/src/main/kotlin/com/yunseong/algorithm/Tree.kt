@@ -1,15 +1,10 @@
-package com.yunseong.algorithm.tree
+package com.yunseong.algorithm
 
 import com.yunseong.algorithm.queue.Queue
 
 class Tree<T>(
-    var rootNode: Node<T>? = null,
-    var search: Search? = null
-) {
-
-    fun search() {
-        this.search?.search(this)
-    }
+    var rootNode: Node<T>? = null
+) : Element {
 
     fun addNode(node: Node<T>) {
         if (this.rootNode == null) {
@@ -36,5 +31,9 @@ class Tree<T>(
                 queue.enqueue(it)
             }
         }
+    }
+
+    override fun search(search: Search) {
+        search.search(this)
     }
 }
