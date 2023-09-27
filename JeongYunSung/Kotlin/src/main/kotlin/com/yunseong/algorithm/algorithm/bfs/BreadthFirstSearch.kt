@@ -3,6 +3,7 @@ package com.yunseong.algorithm.algorithm.bfs
 import com.yunseong.algorithm.Search
 import com.yunseong.algorithm.Tree
 import com.yunseong.algorithm.graph.Graph
+import com.yunseong.algorithm.graph.Vertex
 import com.yunseong.algorithm.queue.Queue
 
 class BreadthFirstSearch : Search {
@@ -32,5 +33,24 @@ class BreadthFirstSearch : Search {
     }
 
     override fun <T> search(graph: Graph<T>) {
+        var vertex = graph.from(2)
+        val queue = Queue(graph[vertex])
+        val visited = mutableListOf<Vertex<T>>()
+
+        println(vertex.data)
+        visited.add(vertex)
+
+        while (queue.hasValue()) {
+            val node = queue.dequeue().getOrThrow()
+            for (n in node) {
+                if (visited.contains(n.destination)) {
+                    continue
+                }
+                vertex = n.destination
+                println(vertex.data)
+                visited.add(vertex)
+                queue.enqueue(graph[vertex]!!)
+            }
+        }
     }
 }
