@@ -5,8 +5,11 @@ class TreeDFS {
     var root: Node? = null
 
     fun dfs(l: Int, root: Node): Int {
-        if (root.lt == null && root.rt == null) return l
-        else return Math.min(dfs(l+1, root.lt!!), dfs(l+1, root.rt!!))
+        if (root.lt == null && root.rt == null) {
+            return l
+        } else {
+            return Math.min(dfs(l + 1, root.lt!!), dfs(l + 1, root.rt!!))
+        }
 
         return 0
     }
@@ -15,8 +18,8 @@ class TreeDFS {
         val data: Int
     ) {
 
-        var lt: Node? = null;
-        var rt: Node? = null;
+        var lt: Node? = null
+        var rt: Node? = null
     }
 }
 

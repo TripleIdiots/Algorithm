@@ -19,13 +19,13 @@ class TreeBFS {
         queue.offer(node)
         var level = 0
 
-        while(queue.isNotEmpty()) {
+        while (queue.isNotEmpty()) {
             val size = queue.size
             for (i in 0 until size) {
                 val cur = queue.poll()
-                if(cur.lt == null && cur.rt == null) return level
-                if(cur.lt != null) queue.offer(cur.lt)
-                if(cur.rt != null) queue.offer(cur.rt)
+                if (cur.lt == null && cur.rt == null) return level
+                if (cur.lt != null) queue.offer(cur.lt)
+                if (cur.rt != null) queue.offer(cur.rt)
             }
             level++
         }
