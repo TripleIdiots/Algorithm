@@ -20,10 +20,21 @@ class Graph<T> : Element {
         adjacencyMap[source]?.add(edge)
     }
 
+    fun addNonDirectedEdge(source: Vertex<T>, destination: Vertex<T>) {
+        val edge = Edge(source, destination)
+        val edge2 = Edge(destination, source)
+        adjacencyMap[source]?.add(edge)
+        adjacencyMap[destination]?.add(edge2)
+    }
+
     fun from(index: Int): Vertex<T> {
         return adjacencyMap.keys.firstOrNull {
             it.index == index
         } ?: throw NoSuchElementException()
+    }
+
+    fun size(): Int {
+        return this.adjacencyMap.size
     }
 
     operator fun get(vertex: Vertex<T>): LinkedList<Edge<T>>? {
