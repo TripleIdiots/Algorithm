@@ -22,8 +22,9 @@ class Quiz2667 {
         for (i in board.indices) {
             for (j in board.indices) {
                 val element = dfs(i, j)
-                if (element > 0)
+                if (element > 0) {
                     list.add(element)
+                }
             }
         }
 
@@ -35,7 +36,7 @@ class Quiz2667 {
         }
     }
 
-    fun dfs(x:Int, y: Int): Int {
+    fun dfs(x: Int, y: Int): Int {
         if (x < 0 || x >= board.size || y < 0 || y >= board.size || board[y][x].visited || board[y][x].data == 0) {
             return 0
         }

@@ -38,7 +38,7 @@ class Maze2178 {
                 return node.first
             }
 
-            for(i in 0 until 4) {
+            for (i in 0 until 4) {
                 val nx = node.second.x + dx[i]
                 val ny = node.second.y + dy[i]
 
@@ -46,7 +46,7 @@ class Maze2178 {
                     continue
                 }
 
-                queue.add(node.first+1 to board[ny][nx])
+                queue.add(node.first + 1 to board[ny][nx])
                 board[ny][nx].visited = true
             }
         }
