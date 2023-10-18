@@ -23,7 +23,7 @@ class Maze2178DfsFail {
     }
 
     private fun dfs(x: Int, y: Int, depth: Int) {
-        if(x < 0 || y < 0 || x >= board.size || y >= board[0].size || board[x][y].visited || board[x][y].data == 0) {
+        if (x < 0 || y < 0 || x >= board.size || y >= board[0].size || board[x][y].visited || board[x][y].data == 0) {
             return
         }
 
@@ -33,8 +33,8 @@ class Maze2178DfsFail {
         }
 
         board[x][y].visited = true
-        for(i in 0 until 4) {
-            dfs(x + dx[i], y + dy[i], depth+1)
+        for (i in 0 until 4) {
+            dfs(x + dx[i], y + dy[i], depth + 1)
         }
     }
 }
