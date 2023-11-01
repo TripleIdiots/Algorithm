@@ -5,6 +5,10 @@ plugins {
     id("jys.kotlin-convention")
 }
 
+tasks.named("runKtlintFormatOverMainSourceSet") {
+    enabled = false
+}
+
 repositories {
     mavenCentral()
 }
